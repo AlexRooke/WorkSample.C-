@@ -1,0 +1,259 @@
+namespace D6_generator
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.textBoxDiceNum = new System.Windows.Forms.TextBox();
+            this.buttonD6 = new System.Windows.Forms.Button();
+            this.buttonStat = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBoxDice8 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDice7 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDice6 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDice5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDice4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDice3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDice2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDice1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // textBoxDiceNum
+            // 
+            this.textBoxDiceNum.Location = new System.Drawing.Point(12, 42);
+            this.textBoxDiceNum.Name = "textBoxDiceNum";
+            this.textBoxDiceNum.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDiceNum.TabIndex = 0;
+            // 
+            // buttonD6
+            // 
+            this.buttonD6.Location = new System.Drawing.Point(119, 42);
+            this.buttonD6.Name = "buttonD6";
+            this.buttonD6.Size = new System.Drawing.Size(75, 23);
+            this.buttonD6.TabIndex = 1;
+            this.buttonD6.Text = "Roll Dice";
+            this.buttonD6.UseVisualStyleBackColor = true;
+            this.buttonD6.Click += new System.EventHandler(this.buttonD6_Click);
+            // 
+            // buttonStat
+            // 
+            this.buttonStat.Location = new System.Drawing.Point(119, 72);
+            this.buttonStat.Name = "buttonStat";
+            this.buttonStat.Size = new System.Drawing.Size(75, 23);
+            this.buttonStat.TabIndex = 2;
+            this.buttonStat.Text = "Roll Stats";
+            this.buttonStat.UseVisualStyleBackColor = true;
+            this.buttonStat.Click += new System.EventHandler(this.buttonStat_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(13, 113);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 225);
+            this.listBox1.TabIndex = 3;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(201, 72);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.TabIndex = 12;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(201, 42);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(75, 23);
+            this.buttonClear.TabIndex = 13;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Number of Dice to roll?";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Dice Rolls";
+            // 
+            // pictureBoxDice8
+            // 
+            this.pictureBoxDice8.Location = new System.Drawing.Point(199, 281);
+            this.pictureBoxDice8.Name = "pictureBoxDice8";
+            this.pictureBoxDice8.Size = new System.Drawing.Size(54, 50);
+            this.pictureBoxDice8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDice8.TabIndex = 11;
+            this.pictureBoxDice8.TabStop = false;
+            // 
+            // pictureBoxDice7
+            // 
+            this.pictureBoxDice7.Location = new System.Drawing.Point(139, 281);
+            this.pictureBoxDice7.Name = "pictureBoxDice7";
+            this.pictureBoxDice7.Size = new System.Drawing.Size(54, 50);
+            this.pictureBoxDice7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDice7.TabIndex = 10;
+            this.pictureBoxDice7.TabStop = false;
+            // 
+            // pictureBoxDice6
+            // 
+            this.pictureBoxDice6.Location = new System.Drawing.Point(200, 225);
+            this.pictureBoxDice6.Name = "pictureBoxDice6";
+            this.pictureBoxDice6.Size = new System.Drawing.Size(54, 50);
+            this.pictureBoxDice6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDice6.TabIndex = 9;
+            this.pictureBoxDice6.TabStop = false;
+            // 
+            // pictureBoxDice5
+            // 
+            this.pictureBoxDice5.Location = new System.Drawing.Point(140, 225);
+            this.pictureBoxDice5.Name = "pictureBoxDice5";
+            this.pictureBoxDice5.Size = new System.Drawing.Size(54, 50);
+            this.pictureBoxDice5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDice5.TabIndex = 8;
+            this.pictureBoxDice5.TabStop = false;
+            // 
+            // pictureBoxDice4
+            // 
+            this.pictureBoxDice4.Location = new System.Drawing.Point(200, 169);
+            this.pictureBoxDice4.Name = "pictureBoxDice4";
+            this.pictureBoxDice4.Size = new System.Drawing.Size(54, 50);
+            this.pictureBoxDice4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDice4.TabIndex = 7;
+            this.pictureBoxDice4.TabStop = false;
+            // 
+            // pictureBoxDice3
+            // 
+            this.pictureBoxDice3.Location = new System.Drawing.Point(140, 169);
+            this.pictureBoxDice3.Name = "pictureBoxDice3";
+            this.pictureBoxDice3.Size = new System.Drawing.Size(54, 50);
+            this.pictureBoxDice3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDice3.TabIndex = 6;
+            this.pictureBoxDice3.TabStop = false;
+            // 
+            // pictureBoxDice2
+            // 
+            this.pictureBoxDice2.Location = new System.Drawing.Point(200, 113);
+            this.pictureBoxDice2.Name = "pictureBoxDice2";
+            this.pictureBoxDice2.Size = new System.Drawing.Size(54, 50);
+            this.pictureBoxDice2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDice2.TabIndex = 5;
+            this.pictureBoxDice2.TabStop = false;
+            // 
+            // pictureBoxDice1
+            // 
+            this.pictureBoxDice1.Location = new System.Drawing.Point(140, 113);
+            this.pictureBoxDice1.Name = "pictureBoxDice1";
+            this.pictureBoxDice1.Size = new System.Drawing.Size(54, 50);
+            this.pictureBoxDice1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDice1.TabIndex = 4;
+            this.pictureBoxDice1.TabStop = false;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 348);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.pictureBoxDice8);
+            this.Controls.Add(this.pictureBoxDice7);
+            this.Controls.Add(this.pictureBoxDice6);
+            this.Controls.Add(this.pictureBoxDice5);
+            this.Controls.Add(this.pictureBoxDice4);
+            this.Controls.Add(this.pictureBoxDice3);
+            this.Controls.Add(this.pictureBoxDice2);
+            this.Controls.Add(this.pictureBoxDice1);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.buttonStat);
+            this.Controls.Add(this.buttonD6);
+            this.Controls.Add(this.textBoxDiceNum);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDice1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox textBoxDiceNum;
+        private System.Windows.Forms.Button buttonD6;
+        private System.Windows.Forms.Button buttonStat;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.PictureBox pictureBoxDice1;
+        private System.Windows.Forms.PictureBox pictureBoxDice2;
+        private System.Windows.Forms.PictureBox pictureBoxDice3;
+        private System.Windows.Forms.PictureBox pictureBoxDice4;
+        private System.Windows.Forms.PictureBox pictureBoxDice5;
+        private System.Windows.Forms.PictureBox pictureBoxDice6;
+        private System.Windows.Forms.PictureBox pictureBoxDice7;
+        private System.Windows.Forms.PictureBox pictureBoxDice8;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+    }
+}
+
