@@ -1,0 +1,366 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace D6_generator
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        int SIZE = 1;
+        
+        
+        private void buttonD6_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            try
+            {
+                int DiceNum = int.Parse(textBoxDiceNum.Text);
+                if (DiceNum <= 8)
+                {
+                    Roll_Dice(DiceNum);
+                }
+                else
+                    MessageBox.Show("Sorry, You can only roll up to 8 D6 die at one time");
+            }
+            catch
+            {
+                MessageBox.Show("Please only use numbers 1-8");
+            }
+        }
+
+        private void buttonStat_Click(object sender, EventArgs e)
+        {   //generate Stat ARAYS
+            Clear();
+
+            const int SIZE = 4;
+            int sTr, dEx, cOn, iNt, wIz, cHa;
+            Random Roll = new Random();
+            int[] STR = new int[SIZE];
+            int[] DEX = new int[SIZE];
+            int[] CON = new int[SIZE];
+            int[] INTEL = new int[SIZE];
+            int[] WIZ = new int[SIZE];
+            int[] CHA = new int[SIZE];
+            #region            //generate numbers
+            for (int i = 0; i < STR.Length; i++)
+            { STR[i] = Roll.Next(6) + 1; }
+            for (int i = 0; i < DEX.Length; i++)
+            { DEX[i] = Roll.Next(6) + 1; }
+            for (int i = 0; i < CON.Length; i++)
+            { CON[i] = Roll.Next(6) + 1; }
+            for (int i = 0; i < INTEL.Length; i++)
+            { INTEL[i] = Roll.Next(6) + 1; }
+            for (int i = 0; i < WIZ.Length; i++)
+            { WIZ[i] = Roll.Next(6) + 1; }
+            for (int i = 0; i < CHA.Length; i++)
+            { CHA[i] = Roll.Next(6) + 1; }
+
+            #endregion
+            #region            //order from lowest to highest
+            SortLowToHigh(STR);SortLowToHigh(DEX); SortLowToHigh(CON);
+            SortLowToHigh(INTEL); SortLowToHigh(WIZ);SortLowToHigh(CHA);
+            #endregion
+            #region            //add together highest 3
+            sTr = STR[1] + STR[2] + STR[3];
+            dEx = DEX[1] + DEX[2] + DEX[3];
+            iNt = INTEL[1] + INTEL[2] + INTEL[3];
+            cOn = CON[1] + CON[2] + CON[3];
+            wIz = WIZ[1] + WIZ[2] + WIZ[3];
+            cHa = CHA[1] + CHA[2] + CHA[3];
+
+            #endregion
+            //display to list box
+            listBox1.Items.Add("STR  =  " + sTr.ToString());
+            listBox1.Items.Add("DEX  =  " + dEx.ToString());
+            listBox1.Items.Add("CON  =  " + cOn.ToString());
+            listBox1.Items.Add("INT  =  " + iNt.ToString());
+            listBox1.Items.Add("WIZ  =  " + wIz.ToString());
+            listBox1.Items.Add("CHA  =  " + cHa.ToString());
+
+        }
+        /// <summary>
+        /// Randomly generates numbers 1-6 and puts them into the listbox
+        /// </summary>
+        /// <param name="D_num">Int used for the number of random numbers requested</param>
+        private void Roll_Dice(int D_num)
+        {
+            SIZE = D_num;
+            Random Roll = new Random();
+            int[] DiceRun = new int[SIZE];
+
+            for (int i = 0; i < DiceRun.Length; i++)
+            {
+                DiceRun[i] = Roll.Next(6);
+                listBox1.Items.Add(DiceRun[i]+1);
+            }
+#region     //Logic and Picbox Method Call
+            int temp = 0;
+            temp = DiceRun[0] + 1;
+            PicBox1(temp);
+            if (DiceRun.Length >= 2)
+            {
+                temp = DiceRun[1] + 1;
+                PicBox2(temp);
+            }
+            else
+                pictureBoxDice2.Visible = false;
+            if (DiceRun.Length >= 3)
+            {
+                temp = DiceRun[2] + 1;
+                PicBox3(temp);
+            }
+            else
+                pictureBoxDice3.Visible = false;
+            if (DiceRun.Length >= 4)
+            {
+                temp = DiceRun[3] + 1;
+                PicBox4(temp);
+            }
+            else
+                pictureBoxDice4.Visible = false;
+            if (DiceRun.Length >= 5)
+            {
+                temp = DiceRun[4] + 1;
+                PicBox5(temp);
+            }
+            else
+                pictureBoxDice5.Visible = false;
+            if (DiceRun.Length >= 6)
+            {
+                temp = DiceRun[5] + 1;
+                PicBox6(temp);
+            }
+            else
+                pictureBoxDice6.Visible = false;
+            if (DiceRun.Length >= 7)
+            {
+                temp = DiceRun[6] + 1;
+                PicBox7(temp);
+            }
+            else
+                pictureBoxDice7.Visible = false;
+            if (DiceRun.Length >= 8)
+            {
+                temp = DiceRun[7] + 1;
+                PicBox8(temp);
+            }
+            else
+                pictureBoxDice8.Visible = false;
+#endregion
+
+        }
+#region      //Pic Box logic methods
+         private void PicBox1(int temp)
+         {
+             pictureBoxDice1.Visible = true;
+             if (temp == 1)
+                    pictureBoxDice1.Image = Properties.Resources.D1;
+             else if (temp == 2)
+                    pictureBoxDice1.Image = Properties.Resources.D2;
+             else if (temp == 3)
+                    pictureBoxDice1.Image = Properties.Resources.D3;
+             else if (temp == 4)
+                    pictureBoxDice1.Image = Properties.Resources.D4;
+             else if (temp == 5)
+                    pictureBoxDice1.Image = Properties.Resources.D5;
+             else if (temp == 6)
+                    pictureBoxDice1.Image = Properties.Resources.D6;
+             else
+                    pictureBoxDice1.Visible = false;
+         }
+         private void PicBox2(int temp)
+         {
+             pictureBoxDice2.Visible = true;
+            if (temp == 1)
+                    pictureBoxDice2.Image = Properties.Resources.D1;
+            else if (temp == 2)
+                    pictureBoxDice2.Image = Properties.Resources.D2;
+            else if (temp == 3)
+                    pictureBoxDice2.Image = Properties.Resources.D3;
+            else if (temp == 4)
+                    pictureBoxDice2.Image = Properties.Resources.D4;
+            else if (temp == 5)
+                    pictureBoxDice2.Image = Properties.Resources.D5;
+            else if (temp == 6)
+                    pictureBoxDice2.Image = Properties.Resources.D6;
+            else
+                    pictureBoxDice1.Visible = false;
+         }
+         private void PicBox3(int temp)
+         {
+             pictureBoxDice3.Visible = true;
+            if (temp == 1)
+                    pictureBoxDice3.Image = Properties.Resources.D1;
+            else if (temp == 2)
+                    pictureBoxDice3.Image = Properties.Resources.D2;
+            else if (temp == 3)
+                    pictureBoxDice3.Image = Properties.Resources.D3;
+            else if (temp == 4)
+                    pictureBoxDice3.Image = Properties.Resources.D4;
+            else if (temp == 5)
+                    pictureBoxDice3.Image = Properties.Resources.D5;
+            else if (temp == 6)
+                    pictureBoxDice3.Image = Properties.Resources.D6;
+            else
+                    pictureBoxDice1.Visible = false;
+         }
+         private void PicBox4(int temp)
+         {
+             pictureBoxDice4.Visible = true;
+            if (temp == 1)
+                    pictureBoxDice4.Image = Properties.Resources.D1;
+            else if (temp == 2)
+                    pictureBoxDice4.Image = Properties.Resources.D2;
+            else if (temp == 3)
+                    pictureBoxDice4.Image = Properties.Resources.D3;
+            else if (temp == 4)
+                    pictureBoxDice4.Image = Properties.Resources.D4;
+            else if (temp == 5)
+                    pictureBoxDice4.Image = Properties.Resources.D5;
+            else if (temp == 6)
+                    pictureBoxDice4.Image = Properties.Resources.D6;
+            else
+                    pictureBoxDice1.Visible = false;
+         }
+         private void PicBox5(int temp)
+         {
+             pictureBoxDice5.Visible = true;
+            if (temp == 1)
+                    pictureBoxDice5.Image = Properties.Resources.D1;
+            else if (temp == 2)
+                    pictureBoxDice5.Image = Properties.Resources.D2;
+            else if (temp == 3)
+                    pictureBoxDice5.Image = Properties.Resources.D3;
+            else if (temp == 4)
+                    pictureBoxDice5.Image = Properties.Resources.D4;
+            else if (temp == 5)
+                    pictureBoxDice5.Image = Properties.Resources.D5;
+            else if (temp == 6)
+                    pictureBoxDice5.Image = Properties.Resources.D6;
+            else
+                    pictureBoxDice1.Visible = false;
+         }
+         private void PicBox6(int temp)
+         {
+             pictureBoxDice6.Visible = true;
+            if (temp == 1)
+                    pictureBoxDice6.Image = Properties.Resources.D1;
+            else if (temp == 2)
+                    pictureBoxDice6.Image = Properties.Resources.D2;
+            else if (temp == 3)
+                    pictureBoxDice6.Image = Properties.Resources.D3;
+            else if (temp == 4)
+                    pictureBoxDice6.Image = Properties.Resources.D4;
+            else if (temp == 5)
+                    pictureBoxDice6.Image = Properties.Resources.D5;
+            else if (temp == 6)
+                    pictureBoxDice6.Image = Properties.Resources.D6;
+            else
+                    pictureBoxDice1.Visible = false;
+         }
+         private void PicBox7(int temp)
+         {
+             pictureBoxDice7.Visible = true;
+            if (temp == 1)
+                    pictureBoxDice7.Image = Properties.Resources.D1;
+            else if (temp == 2)
+                    pictureBoxDice7.Image = Properties.Resources.D2;
+            else if (temp == 3)
+                    pictureBoxDice7.Image = Properties.Resources.D3;
+            else if (temp == 4)
+                    pictureBoxDice7.Image = Properties.Resources.D4;
+            else if (temp == 5)
+                    pictureBoxDice7.Image = Properties.Resources.D5;
+            else if (temp == 6)
+                    pictureBoxDice7.Image = Properties.Resources.D6;
+            else
+                    pictureBoxDice1.Visible = false;
+         }
+         private void PicBox8(int temp)
+         {
+             pictureBoxDice8.Visible = true;
+            if (temp == 1)
+                    pictureBoxDice8.Image = Properties.Resources.D1;
+            else if (temp == 2)
+                    pictureBoxDice8.Image = Properties.Resources.D2;
+            else if (temp == 3)
+                    pictureBoxDice8.Image = Properties.Resources.D3;
+            else if (temp == 4)
+                    pictureBoxDice8.Image = Properties.Resources.D4;
+            else if (temp == 5)
+                    pictureBoxDice8.Image = Properties.Resources.D5;
+            else if (temp == 6)
+                    pictureBoxDice8.Image = Properties.Resources.D6;
+            else
+                    pictureBoxDice1.Visible = false;
+         }
+#endregion
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+        private void Clear()
+        {
+            listBox1.Items.Clear();
+            textBoxDiceNum.Text = String.Empty;
+            pictureBoxDice1.Visible = false;
+            pictureBoxDice2.Visible = false;
+            pictureBoxDice3.Visible = false;
+            pictureBoxDice4.Visible = false;
+            pictureBoxDice5.Visible = false;
+            pictureBoxDice6.Visible = false;
+            pictureBoxDice7.Visible = false;
+            pictureBoxDice8.Visible = false;
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           // MessageBox.Show(" ");
+        }
+
+        private void SortLowToHigh(int[] iArray)
+        {
+            int minIndex;
+            int minValue;
+
+            for (int startScan = 0; startScan < iArray.Length - 1; startScan++)
+            {
+                minIndex = startScan;
+                minValue = iArray[startScan];
+
+                for (int index = startScan + 1; index < iArray.Length; index++)
+                {
+                    if (iArray[index] < minValue)
+                    {
+                        minValue = iArray[index];
+                        minIndex = index;
+                    }
+                }
+                Swap(ref iArray[minIndex], ref iArray[startScan]);
+            }
+        }
+
+        private void Swap(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+    }
+}
